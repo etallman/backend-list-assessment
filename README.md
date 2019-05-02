@@ -1,4 +1,7 @@
-# Kenzie Academy: Lists Assignment
+#Python Katas: List Manipulation
+
+
+# Kenzie Academy: Lists Assignment Instructions
 For this assignment, you'll be completing some list manipulation functions within the list1.py and list2.py files.
 
 There is some light dependency on knowing how

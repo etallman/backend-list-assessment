@@ -23,8 +23,14 @@
 # and last chars of the string are the same.
 # Note: python does not have a ++ operator, but += works.
 def match_ends(words):
-    """Your code goes here.  Edit this docstring."""
-    return
+     """ The match_ends function is iterating through the words list and is running an initial check to see if the length of the word is greater than or equal to 2. If that condition is met, the first and last letter of the word is compared and the count is incremented if the values are equal. When the function is called, the count of words that meet these criteria (string >=2 and first and last chars are the same) should be returned."""
+     
+     count = 0
+     for word in words:
+          if len(word) >= 2:
+            if word[0] == word[-1]:
+              count +=1
+          return count
 
 
 # B. front_x
@@ -33,10 +39,15 @@ def match_ends(words):
 # e.g. ['mix', 'xyz', 'apple', 'xanadu', 'aardvark'] yields
 # ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
 # Hint: this can be done by making 2 lists and sorting each of them
-# before combining them.
+# before combining them. 
+
+####Sorted() starts out as false, reverse to get sort criteria.
+####Lambda returns value of the function at the end to be used for custom sorting -- Lambda reference: https://thispointer.com/python-how-to-sort-a-dictionary-by-key-or-value/
+
 def front_x(words):
-    """Your code goes here.  Edit this docstring."""
-    return
+     """Sorted() takes in iterable list "words" and uses the lambda key to sort by criteria in the substring. A false response sorts by ascending order (alphabetically, in this case). The criteria should sort words starting with 'x' alphabetically, then sort the non-x words alphabetically."""
+     
+     return sorted(words, key=lambda word:(word[0] != 'x', word))
 
 
 # C. sort_last
@@ -46,8 +57,9 @@ def front_x(words):
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 def sort_last(tuples):
-    """Your code goes here.  Edit this docstring."""
-    return
+     """Sorted() uses the tuples list and the lambda key to sort by the last value in the tuple in ascending order."""
+     
+     return sorted(tuples, key=lambda tup: (tup[-1], tup))
 
 
 # Simple provided test() function used in main() to print
