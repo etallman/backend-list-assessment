@@ -16,8 +16,13 @@
 # modify the passed in list.
 # Hint: Don't use `set()`
 def remove_adjacent(nums):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """A new list was created to store the non-duplicated strings. After iterating through the nums list, only unique elements are appended to the new list."""
+    
+    no_dupes_list = []
+    for num in nums:
+        if num not in no_dupes_list:
+            no_dupes_list.append(num)
+    return no_dupes_list
 
 
 # E. Given two lists sorted in increasing order, create and return a merged
