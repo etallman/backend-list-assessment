@@ -15,13 +15,17 @@
 # so [1, 2, 2, 3] returns [1, 2, 3]. You may create a new list or
 # modify the passed in list.
 # Hint: Don't use `set()`
+
+
 def remove_adjacent(nums):
-    """A new list was created to store the non-duplicated strings. After iterating through the nums list, only unique elements are appended to the new list."""
-    
+    """Function iterates through i in nums and if the value is unique (when compared to one index ahead), the number is appended to the list. A second check was """
+
     no_dupes_list = []
-    for num in nums:
-        if num not in no_dupes_list:
-            no_dupes_list.append(num)
+    for i in range(0, len(nums)-1):
+        if nums[i] != nums[i+1]:
+          no_dupes_list.append(nums[i])
+        if i == len(nums) - 2:
+          no_dupes_list.append(nums[i+1])
     return no_dupes_list
 
 
@@ -30,18 +34,24 @@ def remove_adjacent(nums):
 # The solution should work in "linear" time, making a single pass of both lists.
 # Hint: Don't use `sort` or `sorted` -- they are not linear time.
 def linear_merge(list1, list2):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """Function iterates through list one as long as the length of list1 is shorter than list2 and compares lower and greater values before they are added to the merged list. The function should produce a merged list sorted in ascending order."""
+    merged_list = []
 
+    while list1[0] and list2[0]:
+      if list1[0] < list2[0]:
+        merged_list.append(list1.pop(0))
+      else:
+        merged_list.append(list2.pop(0))
+    return merged_list + list2 + list1
 
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 def test(got, expected):
     if got == expected:
-        prefix = ' OK '
+        prefix=' OK '
     else:
-        prefix = '  X '
+        prefix='  X '
     print('{} got: {} expected: {}'.format(prefix, repr(got), repr(expected)))
 
 
