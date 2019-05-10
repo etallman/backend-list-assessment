@@ -16,7 +16,6 @@
 # modify the passed in list.
 # Hint: Don't use `set()`
 
-
 def remove_adjacent(nums):
     """Function iterates through i in nums and if the value is unique (when compared to one index ahead), the number is appended to the list. A second check was """
 

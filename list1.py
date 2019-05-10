@@ -30,7 +30,7 @@ def match_ends(words):
           if len(word) >= 2:
             if word[0] == word[-1]:
               count +=1
-          return count
+     return count
 
 
 # B. front_x
